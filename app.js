@@ -101,6 +101,11 @@ app.use("/listings/:id/reviews", reviewRoutes); // review routes mounted on /lis
 app.use("/", userRoutes);
 
 
+
+app.get("/",(req,res) => {
+  res.redirect("/listings");
+});
+
 // Catch-all route
 app.all("/.*/", (req, res, next) => {
   next(new ExpressError("Page Not Found", 404));
