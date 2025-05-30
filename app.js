@@ -106,10 +106,10 @@ app.get("/",(req,res) => {
   res.redirect("/listings");
 });
 
-// Catch-all route
-app.all("/.*/", (req, res, next) => {
+app.all("*", (req, res, next) => {
   next(new ExpressError("Page Not Found", 404));
 });
+
 
 // Error Handler
 app.use((err, req, res, next) => {
