@@ -102,7 +102,7 @@ app.use("/", userRoutes);
 
 
 // Catch-all route
-app.all("/api/*name", (req, res, next) => {
+app.all("*", (req, res, next) => {
   next(new ExpressError("Page Not Found", 404));
 });
 
