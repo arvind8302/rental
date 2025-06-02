@@ -106,7 +106,7 @@ app.get("/",(req,res) => {
   res.redirect("/listings");
 });
 
-app.all("*", (req, res, next) => {
+app.all("/path/*splash", (req, res, next) => {
   next(new ExpressError("Page Not Found", 404));
 });
 
